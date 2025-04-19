@@ -1,37 +1,41 @@
-*******************************************************************
-** Instructions pour l'utilisation des fichiers d'initialisation **
-*******************************************************************
+Instructions for Using the Initialization Files
+Tips for Importing Files into Python
 
+Use the numpy.loadtxt function, specifying the data type and file path.
+Example:
 
-Conseils pour importer les fichiers dans Python:
-------------------------------------------------
+import numpy as np
+my_array = np.loadtxt(path + '\\1-num.txt', dtype=int)
 
-Utiliser la commande numpy.loadtxt en précisant le type de données et l'adresse du dossier (path)
-ex: my_array = numpy.loadtxt(path + '\\1-num.txt', dtype = int)
+    Note: The spatial discretization step is specified below.
 
-La pas de discrétisation est précisé ci-dessous.
+Conventions
 
+Each configuration includes 2 or 3 matrix files:
 
-Conventions:
-------------
+    dom â€“ Domain Matrix
+    Identifies node types:
 
-Pour chacune des configurations proposées, 2 ou 3 matrices sont fournies:
-	1) Dans tous les cas: une matrice représentant le domaine géométrique (appelée dom)
-	Elle permet d'identifier
-		1) les noeuds qui ne doivent pas être calculés (valeur = 0). Une frange de 0 est placée
-		autour de chaque domaine.
-		2) les noeuds internes qui prennent une valeur = 1.
-		3) les noeuds condition limite de Dirichlet qui sont repérés par une valeur = 2.
-		
-     2) Dans tous les cas: une matrice (appelée num) qui donne un numéro de noeud pour chaque noeud de calcul. Cette numérotation permet d'ordonner le système à résoudre et commence par 1. Pour plus d'infos, voir la séance introductive ou avec les étudiants-moniteurs.
+        0: Nodes not to be computed (surrounded by a fringe of zeros)
 
-	3) Pour le canal rectiligne (cas test) : une matrice reprenant les valeurs des conditions de Dirichlet (appelée cl)
+        1: Internal computational nodes
 
-	4) Pour le canal plus complexe avec obstacle : une matrice contenant l'indice des noeuds définissant le contour de l'obstacle (2-contourObj.txt).
-	
-Informations complémentaires:
------------------------------
+        2: Dirichlet boundary condition nodes
 
-1) Canal rectiligne - pas spatial = 0,5 m
+    num â€“ Node Numbering Matrix
 
-2) Canal avec obstacle - pas spatial = 0,01 cm
+        Provides a unique number for each computational node
+
+        Numbering starts at 1 and is used to structure the system of equations
+
+        For further explanation, refer to the introductory session or consult with student tutors
+
+    cl â€“ Dirichlet Condition Values (only for the straight channel test case)
+
+    2-contourObj.txt â€“ Obstacle Contour Indices (only for the complex channel with an obstacle)
+
+Additional Information
+
+    Straight Channel: Spatial step = 0.5 m
+
+    Channel with Obstacle: Spatial step = 0.01 cm
