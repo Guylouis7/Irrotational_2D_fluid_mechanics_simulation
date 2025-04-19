@@ -30,4 +30,4 @@ To use the codes in this repository, you need Python installed on your system. F
 ## Contributors 
 - Lhoest Guy-Louis
 - Leyen Benjamin
-- Hendriclkx Victor 
+- Hendrickx Victor 
