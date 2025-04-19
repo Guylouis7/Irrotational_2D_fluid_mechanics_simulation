@@ -6,12 +6,8 @@ This repository provides Python codes and tools to solve irrotational 2D fluid m
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -31,3 +27,7 @@ This repository aims to give tools to simulate irrotational flow with an asymetr
 ## Installation
 To use the codes in this repository, you need Python installed on your system. Follow the link below: https://www.python.org/downloads/
 
+## Contributors 
+- Lhoest Guy-Louis
+- Leyen Benjamin
+- Hendriclkx Victor 
