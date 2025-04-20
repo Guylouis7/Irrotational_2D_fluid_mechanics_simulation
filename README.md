@@ -7,7 +7,8 @@ It gives tools to simulate irrotational flow with an asymetric obstacle in it.
 
 
 ## User guide
-Run the main.py file to plot a variety of graphs
+Run the main.py file to plot a variety of graphs.
+
 CL directory contains the files describing the problem : 
 - 2-dom.txt describes wether or not a point is part of the domain : 0 = outside the domain, 1 = inside and 2 = boundary node. (File was given to us by our instructor)
 - 2-dom_bords.txt asigns a different number to each distinct edge, in order to asign uniform boundary conditions easily
